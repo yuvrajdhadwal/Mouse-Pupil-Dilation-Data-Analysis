@@ -1,6 +1,9 @@
-These files are meant to be used to read the data provided by Deep Lab Cut and create graphs based on that data.
+This repository is a documentation of the work I have done to track and analyze the pupil dilation of mice during numerous different experiments and align this eye dilation with stimuli occurring at irregular intervals and regular intervals.
 
-```Pupil-Area-Calculations.py``` is a file that will use the Shoelace formula to calculate the area of the mouse pupil <br>
-```Pupil-Area-Graphing.py``` is a file that will remove outliers from the data and then graph the data into an interactive graph <br>
-```Voltage-Reader.py``` is a file that will read voltage and spit out a csv of it <br>
-```pupil_area_subplots.py``` is a file that will create 3 graphs of the pupil area and stack them on top of each other this is meant to be used to be saved in static context
+Check out ``pupil_data_analysis`` folder for in-depth instructions and code on how data was analyzed and graphed.
+
+Check out the ``results`` folder for an example of the different graphs produced for a single session on a mouse.
+
+For this project, I utilized Deep Learning Convolutional Neural Networks (CNNs) from DeepLabCut to track 12 different points on the perimeter of the mouse's pupil during a 45 - 60 minute training session. During these sessions, mice are shown stimuli at irregular intervals, and the goal of this research project is to see if the mouse's pupils dilate before a stimulus is shown in anticipation of the stimuli. Pupil dilation is a signal of heightened brain activity.
+
+The data from the CNN model is then used to calculate the pupil area per frame. We then take the +/- 2 seconds window for each stimulus to see individual stimuli mouse reaction. Finally, everything culminates into a standardized, average curve to find if there is a trend in the data.
